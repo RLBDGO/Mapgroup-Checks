@@ -232,7 +232,7 @@ class BBS(object):
                 incon[i] += [int(incon[i][-1]*incon[i][2])]
             else:
                 incon[i].remove(incon[i][-1])
-                incon[i] += [int(incon[i][-1]*icon[i][2])]
+                incon[i] += [int(incon[i][-1]*incon[i][2])]
 
         for i in incom:
             output_messages += [f'Inkompatibilität zwischen {i[0]} und {i[1]}   |   Anzahl gleicher Elemente: {i[-1]}']
@@ -255,12 +255,12 @@ class BBS(object):
         user = str(getuser())
         date = str(datetime.now())
 
-        text = f'timestamp: {date}' + '\n' + f'PrüferIn: {user}' + '\n\n' + self.output(messages)
+        text = f'TIMESTAMP: {date}' + '\n' + f'PRUEFER*IN: {user}' + '\n\n' + self.output(messages)
 
         try:
-            #if not path.exists(directory):
-                #makedirs(directory)
-            with open('/home/dominik/Schreibtisch/file.txt', 'w') as f:
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            with open(directory+'/file.txt', 'w') as f:
                 f.write(text)
         except Exception:
             print('logfile konnte nicht erzeugt werden')
@@ -269,8 +269,8 @@ class BBS(object):
     
         
                     
-o = BBS('test_data_.csv', 5, 10, 13, 15)
+o = BBS('test_case/test_data_.csv', 5, 10, 13, 15)
 #print(o.data)
 #print(o.infos)
 print(o.output(o.compare_singleton_instances(o.infos)))
-o.log_file(o.compare_singleton_instances(o.infos), '/home/dominik/Schreibtisch')
+o.log_file(o.compare_singleton_instances(o.infos), 'test_case')

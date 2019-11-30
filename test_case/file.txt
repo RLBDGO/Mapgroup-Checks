@@ -1,0 +1,5 @@
+TIMESTAMP: 2019-11-30 15:23:09.349501
+PRUEFER*IN: dominik
+
+Inkompatibilität zwischen G02 und G21   |   Anzahl gleicher Elemente: 1
+Inkonsistenz zwischen G02 und G72       |   Anzahl gleicher Elemente: 1
