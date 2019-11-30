@@ -1,7 +1,5 @@
 from pandas import DataFrame, read_csv, Series
-from getpass import getuser
-from datetime import datetime
-import os
+
 
 
 class BBS(object):
@@ -241,36 +239,10 @@ class BBS(object):
                 
         return output_messages
 
-    def output(self, messages):
-
-        text = ''
-        
-        for message in messages:
-            text += '---------------------------------------------------------------------------\n'+message+'\n'
-
-        return text+'---------------------------------------------------------------------------\n'
-
-    def log_file(self, messages, directory):
-
-        user = str(getuser())
-        date = str(datetime.now())
-
-        text = f'TIMESTAMP: {date}' + '\n' + f'PRUEFER*IN: {user}' + '\n\n' + self.output(messages)
-
-        try:
-            if not os.path.exists(directory):
-                os.makedirs(directory)
-            with open(directory+'/file.txt', 'w') as f:
-                f.write(text)
-        except Exception:
-            print('logfile konnte nicht erzeugt werden')
-        
-        
     
         
                     
-o = BBS('test_case/test_data_.csv', 5, 10, 13, 15)
+
 #print(o.data)
 #print(o.infos)
-print(o.output(o.compare_singleton_instances(o.infos)))
-o.log_file(o.compare_singleton_instances(o.infos), 'test_case')
+
