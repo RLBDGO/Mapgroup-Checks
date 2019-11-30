@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 
 def output(messages):
+
     text = ''
 
     for message in messages:
@@ -12,6 +13,7 @@ def output(messages):
 
 
 def log_file(messages, directory):
+
     user = str(getuser())
     date = str(datetime.now())
 
@@ -22,5 +24,6 @@ def log_file(messages, directory):
             os.makedirs(directory)
         with open(directory + '/file.txt', 'w') as f:
             f.write(text)
+
     except Exception:
         print('logfile konnte nicht erzeugt werden')

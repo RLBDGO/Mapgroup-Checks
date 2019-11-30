@@ -238,11 +238,3 @@ class BBS(object):
             output_messages += [f'| Inkonsistenz zwischen {i[0]} und {i[1]}       |   Anzahl gleicher Elemente: {i[-1]} |']
                 
         return output_messages
-
-    
-        
-                    
-
-#print(o.data)
-#print(o.infos)
-
