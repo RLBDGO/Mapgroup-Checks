@@ -235,9 +235,9 @@ class BBS(object):
                 incon[i] += [int(incon[i][-1]*incon[i][2])]
 
         for i in incom:
-            output_messages += [f'Inkompatibilität zwischen {i[0]} und {i[1]}   |   Anzahl gleicher Elemente: {i[-1]}']
+            output_messages += [f'| Inkompatibilität zwischen {i[0]} und {i[1]}   |   Anzahl gleicher Elemente: {i[-1]} |']
         for i in incon:
-            output_messages += [f'Inkonsistenz zwischen {i[0]} und {i[1]}       |   Anzahl gleicher Elemente: {i[-1]}']
+            output_messages += [f'| Inkonsistenz zwischen {i[0]} und {i[1]}       |   Anzahl gleicher Elemente: {i[-1]} |']
                 
         return output_messages
 
@@ -246,9 +246,9 @@ class BBS(object):
         text = ''
         
         for message in messages:
-            text += message+'\n'
+            text += '---------------------------------------------------------------------------\n'+message+'\n'
 
-        return text
+        return text+'---------------------------------------------------------------------------\n'
 
     def log_file(self, messages, directory):
 
