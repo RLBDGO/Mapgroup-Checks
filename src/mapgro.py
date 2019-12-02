@@ -22,6 +22,10 @@ class BBS(object):
         # herausgeparste Infos
         self.infos = self.parse_infos(data=self.data,
                                       columns=self.columns)
+
+        # Resultate
+        self.results = self.compare_singleton_instances(self.infos) + \
+                        self.compare_tuple_instances(self.infos)
         
     def measure_coherence(self, to_compare_1, to_compare_2):
 
@@ -250,7 +254,7 @@ class BBS(object):
 
         return output_messages
 
-    def compare_tuple_instances(self, infos, dataframe):
+    def compare_tuple_instances(self, infos):
 
         # Anzahl der Infos
         n = 2
@@ -405,7 +409,7 @@ class BBS(object):
         if len(inc) != 0 or len(opt) != 0:
             for i in inc:
                 try:
-                    output_messages += [f'| Inkompatibilität zwischen {i[0]} und {i[1]}   |   Anzahl gleicher Elemente: {int(i[-1])}   |']
+                    output_messages += [f'| Inkonsistenz zwischen {i[0]} und {i[1]}       |   Anzahl gleicher Elemente: {int(i[-1])}   |']
                 except Exception:
                     None
             for o in opt:
@@ -416,11 +420,9 @@ class BBS(object):
         else:
             output_messages = ''
 
-
-
-
         return output_messages
 
 o = BBS('test_case/testdata.csv', 5, 10, 13, 15)
-print(o.compare_tuple_instances(o.infos, o.data))
+#print(o.compare_tuple_instances(o.infos, o.data))
 #print(o.compare_singleton_instances(o.infos))
+#print(o.results)
