@@ -301,6 +301,17 @@ class BBS(object):
                             if o_1[0] == o_2[1] and o_2[0] == o_1[1]:
                                 opt.remove(o_2)
 
+        # Hinzunahme von Arraylängen der
+        # jeweiligen Mapgruppen in opt
+        for i in range(len(opt)):
+            opt[i] = list(opt[i])
+        for o in opt:
+            for info in data:
+                if o[0] == info[0]:
+                    o += [len(info[1])]
+                if o[1] == info[0]:
+                    o += [len(info[1])]
+
         # Längen der Werte-Arrays
         lengths = [len(info[1]) for info in data]
 
@@ -339,6 +350,13 @@ class BBS(object):
                 if (m1[0] == m2[1] and m1[1] == m2[0]):
                     coherence_measures.remove(m2)
 
+        # coherence_measures info
+        # opt einbinden
+        for o in opt:
+            for m in coherence_measures:
+                if o[0] == m[0] and o[1] == m[1] or o[1] == m[0] and o[0] == m[1]:
+                    o += [m[2]]
+
         # Schnitt zwischen coherence measures &
         # opt bzgl. Maß > 0 eruieren
         for m in coherence_measures:
@@ -346,8 +364,62 @@ class BBS(object):
                 if m[2] > 0 and ((m[0] == o[0] and m[1] == o[1]) or (m[1] == o[0] and m[0] == o[1])):
                     coherence_measures.remove(m)
 
+        # Hinzunahme von Arraylängen der
+        # jeweiligen Mapgruppen in coherence_measures
+        for i in range(len(coherence_measures)):
+            coherence_measures[i] = list(coherence_measures[i])
+        for i in range(len(coherence_measures)):
+            coherence_measures[i] = list(coherence_measures[i])
+        for m in coherence_measures:
+            for info in data:
+                if m[0] == info[0]:
+                    m += [len(info[1])]
+                if m[1] == info[0]:
+                    m += [len(info[1])]
 
-        return coherence_measures, opt
+        # Anzahl gleicher Elemente
+        # in opt berechnen
+        for o in opt:
+            if o[-2] <= o[-3]:
+                o += [o[-2]*o[-1]]
+            else:
+                o += [o[-3] * o[-1]]
+
+        # Inkonsistenzen herausparsen
+        inc = []
+        for m in coherence_measures:
+            if m[2] > 0:
+                inc += [m]
+
+        # Anzahl gleicher Elemente
+        # in inc berechnen
+        for i in inc:
+            if i[-1] <= o[-2]:
+                i += [i[-1]*i[-3]]
+            else:
+                i += [i[-2] * i[-3]]
+
+        # Output konfigurieren
+        output_messages = []
+
+        if len(inc) != 0 or len(opt) != 0:
+            for i in inc:
+                try:
+                    output_messages += [f'| Inkompatibilität zwischen {i[0]} und {i[1]}   |   Anzahl gleicher Elemente: {int(i[-1])}   |']
+                except Exception:
+                    None
+            for o in opt:
+                try:
+                    output_messages += [f'| Verbesserung zwischen {o[0]} und {o[1]}       |   Anzahl gleicher Elemente: {int(o[-1])}   |']
+                except Exception:
+                    None
+        else:
+            output_messages = ''
+
+
+
+
+        return output_messages
 
 o = BBS('test_case/testdata.csv', 5, 10, 13, 15)
 print(o.compare_tuple_instances(o.infos, o.data))
