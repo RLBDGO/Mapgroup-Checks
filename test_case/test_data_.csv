@@ -1,25 +1,25 @@
-1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16
-;;;;;'BKT';;;;;G02;;;KontoNr;in;(20190081365, 20190081373, 1450622000,  510) 
-;;;;;'BKT';;;;;G21;;;KontoartCode;in;(510, 520, 530)
-;;;;;'ABS';;;;;G41;;;KontoartCode;in;(700, 705, 902, 520)
-;;;;;'BKT';;;;;G72;;;KontoNr;in;(20190081365, 2)0190081373)
-;;;;;'ABS';;;;;G46;;;SachkontoNr;in;(8206, 8479)
-;;;;;'ABS';;;;;G46;;;KontoartCode;is;980
-;;;;;'ABS';;;;;G39;;;SachkontoNr;in ;(8496, 8704)
-;;;;;'ABS';;;;;G39;;;KontoartCode;is;980
-;;;;;'KTO;;;;;G58;;;SachkontoNr;in;(9419, 9412)
-;;;;;'KTO';;;;;G58;;;KontoartCode;is;791
-;;;;;'KTO';;;;;G60;;;SachkontoNr;in;(9419, 9412)
-;;;;;'KTO';;;;;G60;;;KontoartCode;is;791
-;;;;;'BKT';;;;;G22;;;Subsystem;is;0
-;;;;;'BKT';;;;;G22;;;SachkontoNr;is;1870
-;;;;;'BKT';;;;;G22;;;KontoartCode;is;720
-;;;;;'KTO';;;;;G12;;;Subsystem;is;0
-;;;;;'KTO;;;;;G12;;;SachkontoNr;is ;1700
-;;;;;'KTO';;;;;G12;;;KontoartCode;is;720
-;;;;;'ABS';;;;;G62;;;Subsystem;is;8
-;;;;;'ABS';;;;;G62;;;KontoartCode;is;100
-;;;;;'ABS';;;;;G62;;;SachkontoNr;in;(2110, 9650, 9370, 9371)
-;;;;;'ABS';;;;;G63;;;Subsystem;is ;8
-;;;;;'ABS';;;;;G63;;;KontoartCode;is;410
-;;;;;'ABS';;;;;G63;;;SachkontoNr;in;(1060, 9519, 9515, 9522, 1033)
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+,,,,,'BKT',,,,,G02,,,KontoNr,in,"(20190081365, 20190081373, 1450622000,   510) "
+,,,,,'BKT',,,,,G21,,,KontoartCode,in,"(510, 520,  530)"
+,,,,,'ABS',,,,,G41,,,KontoartCode,in,"(700, 705, 902,  520)"
+,,,,,'BKT',,,,,G72,,,KontoNr,in,"(20190081365,  20190081373)"
+,,,,,'ABS',,,,,G46,,,SachkontoNr,in,"(8206,  8479)"
+,,,,,'ABS',,,,,G46,,,KontoartCode,is,980
+,,,,,'ABS',,,,,G39,,,SachkontoNr,in ,"(8496,  8704)"
+,,,,,'ABS',,,,,G39,,,KontoartCode,is,980
+,,,,,'KTO‘,,,,,G58,,,SachkontoNr,in,"(9419,  9412)"
+,,,,,'KTO',,,,,G58,,,KontoartCode,is,791
+,,,,,'KTO',,,,,G60,,,SachkontoNr,in,"(9419,  9412)"
+,,,,,'KTO',,,,,G60,,,KontoartCode,is,791
+,,,,,'BKT',,,,,G22,,,Subsystem,is,0
+,,,,,'BKT',,,,,G22,,,SachkontoNr,is,1870
+,,,,,'BKT',,,,,G22,,,KontoartCode,is,720
+,,,,,'KTO',,,,,G12,,,Subsystem,is,0
+,,,,,'KTO',,,,,G12,,,SachkontoNr,is ,1700
+,,,,,'KTO',,,,,G12,,,KontoartCode,is,720
+,,,,,'ABS',,,,,G62,,,Subsystem,is,8
+,,,,,'ABS',,,,,G62,,,KontoartCode,is,100
+,,,,,'ABS',,,,,G62,,,SachkontoNr,in,"(2110, 9650, 9370,  9371)"
+,,,,,'ABS',,,,,G63,,,Subsystem,is ,8
+,,,,,'ABS',,,,,G63,,,KontoartCode,is,410
+,,,,,'ABS',,,,,G63,,,SachkontoNr,in,"(1060, 9519, 9515, 9522,  1033)"
