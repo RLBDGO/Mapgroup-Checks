@@ -32,17 +32,21 @@ class BankBasis(MapFilter):
 
         self.tuple_opt = self.opt_candidates(data=self.infos_tuple, n=2)
 
+        self.tuple_inc = self.inc_candidates(data=self.infos_tuple)
+
         # herausgeparste Infos
         # zu zweistelligen Mapgruppen
         self.infos_triple = self.parse_infos_triple(base=self.infos_singleton)
 
         self.triple_opt = self.opt_candidates(data=self.infos_triple, n=3)
 
+        self.triple_inc = self.inc_candidates(data= self.infos_triple)
+
         # Resultat bzgl.
         # einstelliger Mapgruppen
         self.singleton_result = self.compare_singleton_instances(infos=self.infos_singleton)
 
-        self.result = self.singleton_result + self.tuple_opt + self.triple_opt
+        self.result = self.singleton_result + self.tuple_opt + self.triple_opt + self.tuple_inc + self.triple_inc
 
     def compare_singleton_instances(self, infos):
 
@@ -202,7 +206,7 @@ class BankBasis(MapFilter):
             for j in data:
                 value = compare(self.remove_duplicates(i[-1][0]),
                                 self.remove_duplicates(j[-1][0]))
-                if value >= 0.5 and (check(i, j) == True) and i != j:
+                if value >= 0.5 and value < 1 and (check(i, j) == True) and i != j:
                     results += [(i[0], j[0], value)]
 
         for r_1 in results:
