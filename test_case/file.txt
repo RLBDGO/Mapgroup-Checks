@@ -1,16 +1,12 @@
-TIMESTAMP: 2019-12-03 09:43:29.393347
+TIMESTAMP: 2019-12-03 17:00:41.593436
 PRUEFER*IN: dominik
 
------------------------------------------------------------------------------
-| Inkompatibilität zwischen G02 und G21   |   Anzahl gleicher Elemente: 1   |
------------------------------------------------------------------------------
-| Inkonsistenz zwischen G02 und G72       |   Anzahl gleicher Elemente: 2   |
------------------------------------------------------------------------------
-| Inkonsistenz zwischen G58 und G60       |   Anzahl gleicher Elemente: 3   |
------------------------------------------------------------------------------
-| Verbesserung zwischen G46 und G39       |   Anzahl gleicher Elemente: 1   |
------------------------------------------------------------------------------
-| Inkonsistenz zwischen G22 und G12       |   Anzahl gleicher Elemente: 2   |
------------------------------------------------------------------------------
-| Inkonsistenz zwischen G62 und G63       |   Anzahl gleicher Elemente: 1   |
------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+|   INKOMPATIBILITÄT    |   Inkompatibilität zwischen MG02 und MG21   |
+-----------------------------------------------------------------------
+|   INTEGRATION         |   Integration zwischen MG39 und MG46 mögl.  |
+-----------------------------------------------------------------------
+|   INTEGRATION         |   Integration zwischen MG51 und MG55 mögl.  |
+-----------------------------------------------------------------------
+|   INTEGRATION         |   Integration zwischen MG22 und MG35 mögl.  |
+-----------------------------------------------------------------------
