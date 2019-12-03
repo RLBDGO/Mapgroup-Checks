@@ -25,7 +25,8 @@ class BBS(object):
 
         # Resultate
         self.results = self.compare_singleton_instances(self.infos) + \
-                        self.compare_tuple_instances(self.infos)
+                        self.compare_tuple_instances(self.infos) + \
+                        self.compare_triple_instances(self.infos)
         
     def measure_coherence(self, to_compare_1, to_compare_2):
 
@@ -471,7 +472,7 @@ class BBS(object):
         # Verbesserungsoptionen eruieren
         opt = []
 
-        inter = lambda x, y: sum([int(i == j) for i in x for j in y])/len(x) > 0
+        inter = lambda x, y: sum([int(i == j) for i in x for j in y])/len(x) == 1
         for info_1 in data:
             for info_2 in data:
                 if inter(info_1[-2:], info_2[-2:]) and info_1[-1] == info_2[-1] and info_1[1] != info_2[1]:
@@ -598,8 +599,3 @@ class BBS(object):
             output_messages = ''
 
         return output_messages
-
-o = BBS('test_case/testdata.csv', 5, 10, 13, 15)
-print(o.compare_triple_instances(o.infos))
-#print(o.compare_singleton_instances(o.infos))
-#print(o.results)
