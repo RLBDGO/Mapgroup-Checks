@@ -22,7 +22,7 @@ def log_file(messages, directory):
     try:
         if not os.path.exists(directory):
             os.makedirs(directory)
-        with open(directory + '/file.txt', 'w') as f:
+        with open(directory + '/log_file.txt', 'w') as f:
             f.write(text)
 
     except Exception:
