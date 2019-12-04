@@ -1,4 +1,4 @@
-from pandas import DataFrame, read_csv, Series
+from pandas import Series
 
 
 class MapFilter(object):
@@ -29,7 +29,6 @@ class MapFilter(object):
         '''
         Misst relative Übereinstimmung
         von zu vergleichenden Infos:
-
         Übereinstimmungsgrad ergibt sich
         relativem Anteil an Elementen
         in kleinerer Menge von Infos, die

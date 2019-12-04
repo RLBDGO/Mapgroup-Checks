@@ -19,7 +19,7 @@ def log_file(messages, directory):
     date = str(datetime.now())
 
     text = f'TIMESTAMP: {date}' + '\n' + f'PRUEFER*IN: {user}' + '\n\n' + output(messages)
-    file_name = ''.join([s for s in date])+'_'+user
+    file_name = ''.join([s for s in date[0:10]])+'_'+user
 
     try:
         if not os.path.exists(directory):

@@ -13,6 +13,7 @@ class BankBasis(MapFilter):
                                            sep=';',
                                            encoding='ISO-8859-1',
                                            header=None))
+
         # Relevante Spalten
         self.columns = [info_1, info_2, info_3, info_4]
 
@@ -57,7 +58,7 @@ class BankBasis(MapFilter):
         self.triple_inc = self.inc_candidates(data= self.infos_triple)
 
         # Ergebnisse
-        self.result = self.singleton_result + self.tuple_opt +\
+        self.result = self.singleton_result + self.tuple_opt + \
                       self.triple_opt + self.tuple_inc + self.triple_inc
 
     def compare_singleton_instances(self, infos):

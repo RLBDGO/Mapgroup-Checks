@@ -2,6 +2,7 @@ from src.bankbasis import BankBasis
 from src.output import output, log_file
 from configparser import ConfigParser
 
+
 config = ConfigParser()
 config.read('config_bbs.ini')
 
@@ -26,6 +27,7 @@ def main():
     print(output(test.result))
 
     log_file(test.result, r'{}'.format(OUT))
+
 
 if __name__ == '__main__':
     main()
