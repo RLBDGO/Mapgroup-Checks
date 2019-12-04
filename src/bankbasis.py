@@ -187,9 +187,9 @@ class BankBasis(MapFilter):
                 incon[i] += [int(incon[i][-1] * incon[i][2])]
 
         for i in incom:
-            output_messages += [f'  INKOMPATIBILITÄT    |   Inkompatibilität zwischen {i[0]} und {i[1]}     ']
+            output_messages += [f'  INKOMPATIBILITAET   |   Inkompatibilitaet zwischen {i[0]} und {i[1]}     ']
         for i in incon:
-            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {i[0]} und {i[1]}         ']
+            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {i[0]} und {i[1]}          ']
 
         return output_messages
 
@@ -228,7 +228,7 @@ class BankBasis(MapFilter):
         output_messages = []
 
         for r in results:
-            output_messages += [f'  INTEGRATION         |   Integration zwischen {r[0]} und {r[1]} möglich  ']
+            output_messages += [f'  INTEGRATION         |   Integration zwischen {r[0]} und {r[1]} moeglich  ']
 
         return output_messages
 
@@ -255,6 +255,6 @@ class BankBasis(MapFilter):
         output_messages = []
 
         for r in results:
-            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {r[0]} und {r[1]}         ']
+            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {r[0]} und {r[1]}          ']
 
         return output_messages
