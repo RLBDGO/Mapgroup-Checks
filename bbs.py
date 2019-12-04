@@ -18,10 +18,10 @@ OUT = config['out']['log.path']
 def main():
 
     test = BankBasis(file_path=r'{}'.format(IN),
-                  info_1=int(INFO_1)-1,
-                  info_2=int(INFO_2)-1,
-                  info_3=int(INFO_3)-1,
-                  info_4=int(INFO_4)-1)
+                     info_1=int(INFO_1)-1,
+                     info_2=int(INFO_2)-1,
+                     info_3=int(INFO_3)-1,
+                     info_4=int(INFO_4)-1)
 
     print(output(test.result))
 
