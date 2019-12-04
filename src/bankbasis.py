@@ -258,4 +258,3 @@ class BankBasis(MapFilter):
             output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {r[0]} und {r[1]}         ']
 
         return output_messages
-
