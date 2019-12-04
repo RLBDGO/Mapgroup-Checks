@@ -26,27 +26,39 @@ class BankBasis(MapFilter):
         self.infos_singleton = self.parse_infos_singleton(data=self.data,
                                                           columns=self.columns)
 
-        # herausgeparste Infos
-        # zu zweistelligen Mapgruppen
-        self.infos_tuple = self.parse_infos_tuple(base=self.infos_singleton)
-
-        self.tuple_opt = self.opt_candidates(data=self.infos_tuple, n=2)
-
-        self.tuple_inc = self.inc_candidates(data=self.infos_tuple)
-
-        # herausgeparste Infos
-        # zu zweistelligen Mapgruppen
-        self.infos_triple = self.parse_infos_triple(base=self.infos_singleton)
-
-        self.triple_opt = self.opt_candidates(data=self.infos_triple, n=3)
-
-        self.triple_inc = self.inc_candidates(data= self.infos_triple)
-
         # Resultat bzgl.
         # einstelliger Mapgruppen
         self.singleton_result = self.compare_singleton_instances(infos=self.infos_singleton)
 
-        self.result = self.singleton_result + self.tuple_opt + self.triple_opt + self.tuple_inc + self.triple_inc
+        # herausgeparste Infos
+        # zu zweistelligen Mapgruppen
+        self.infos_tuple = self.parse_infos_tuple(base=self.infos_singleton)
+
+        # Verbesserungsoptionen unter
+        # zweistellige Mapgruppen
+        self.tuple_opt = self.opt_candidates(data=self.infos_tuple,
+                                             n=2)
+
+        # Inkonsistenzen unter
+        # zweistelligen Mapgruppen
+        self.tuple_inc = self.inc_candidates(data=self.infos_tuple)
+
+        # herausgeparste Infos
+        # zu dreistelligen Mapgruppen
+        self.infos_triple = self.parse_infos_triple(base=self.infos_singleton)
+
+        # Verbesserungsoptionen unter
+        # dreistelligen Mapgruppen
+        self.triple_opt = self.opt_candidates(data=self.infos_triple,
+                                              n=3)
+
+        # Inkonsistenzen unter
+        # dreistelligen Mapgruppen
+        self.triple_inc = self.inc_candidates(data= self.infos_triple)
+
+        # Ergebnisse
+        self.result = self.singleton_result + self.tuple_opt +\
+                      self.triple_opt + self.tuple_inc + self.triple_inc
 
     def compare_singleton_instances(self, infos):
 
@@ -175,11 +187,9 @@ class BankBasis(MapFilter):
                 incon[i] += [int(incon[i][-1] * incon[i][2])]
 
         for i in incom:
-            output_messages += [
-                f'|   INKOMPATIBILITÄT    |   Inkompatibilität zwischen {i[0]} und {i[1]}   |']
+            output_messages += [f'  INKOMPATIBILITÄT    |   Inkompatibilität zwischen {i[0]} und {i[1]}     ']
         for i in incon:
-            output_messages += [
-                f'|   INKONSISTENZ        |   Inkonsistenz zwischen {i[0]} und {i[1]}       |']
+            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {i[0]} und {i[1]}         ']
 
         return output_messages
 
@@ -218,7 +228,7 @@ class BankBasis(MapFilter):
         output_messages = []
 
         for r in results:
-            output_messages += [f'|   INTEGRATION         |   Integration zwischen {r[0]} und {r[1]} mögl.  |']
+            output_messages += [f'  INTEGRATION         |   Integration zwischen {r[0]} und {r[1]} möglich  ']
 
         return output_messages
 
@@ -245,6 +255,7 @@ class BankBasis(MapFilter):
         output_messages = []
 
         for r in results:
-            output_messages += [f'|  INKONSISTENZ  |   Inkosistenz zwischen {r[0]} und {r[1]}   |']
+            output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {r[0]} und {r[1]}         ']
 
         return output_messages
+
