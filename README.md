@@ -29,8 +29,7 @@ leichteren Interpretation der Ergebnisse. Wir unterscheiden zwischen **Quellen**
 | Quelle | Mapgruppe | Merkmal   | Merkmalsausprägung |   |
 |--------|-----------|-----------|--------------------|---|
 | "ABS"  | MG01      | KontoNr   | (1, 2, 3)          |   |
-|        |           |           |                    |   |
-|        |           |           |                    |   |
+
 
 Zudem unterscheiden wir zwischen ein-, zwei- und dreistelligen Mapgruppen. Die Stelligkeit einer
 Mapgruppe ergibt sich aus der Anzahl der zu dieser Mapgruppe gegebenen Merkmale., d.h. "MG01" ist
@@ -47,7 +46,7 @@ der Schnitt zwischen ihren Merkmalsausprägungen nicht leer ist, aber verschiede
 |--------|-----------|-----------|--------------------|---|
 | "ABS"  | MG01      | KonNr     | (1, 2, 3)          |   |
 | "ABS   | MG02      | KonArCo   | 1                  |   |
-|        |           |           |                    |   |
+
 
 * **INKONSISTENT**: Zwei verschiedene Mapgruppen heißen inkonsistent genau dann wenn
 sie dieselbe Merkmalsausprägungen & dieselbe Quelle besitzen, z.B.:
@@ -56,7 +55,7 @@ sie dieselbe Merkmalsausprägungen & dieselbe Quelle besitzen, z.B.:
 |--------|-----------|-----------|--------------------|---|
 | "ABS"  | MG01      | KonNr     | (1, 2, 3)          |   |
 | "ABS   | MG01      | KonNr     | (1, 2, 3)          |   |
-|        |           |           |                    |   |
+
 
 * **VERBESSERUNGSPOTENZIAL**: Zwei verschiedene Mapgruppen stellen eine Verbesserungsoption dar genau dann wenn
 sie in einander intergiert werden können:
