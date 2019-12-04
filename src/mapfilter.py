@@ -12,19 +12,6 @@ class MapFilter(object):
     def __init__(self, file_path, info_1, info_2, info_3, info_4):
         pass
 
-    def load_data(self, file_path):
-
-        '''
-        lädt Daten
-        '''
-
-        raw_data = DataFrame(read_csv(r'{}'.format(file_path),
-                                           sep=';',
-                                           encoding='ISO-8859-1',
-                                           header=None))
-
-        return raw_data
-
     def preprocess(self, data, columns):
 
         '''
