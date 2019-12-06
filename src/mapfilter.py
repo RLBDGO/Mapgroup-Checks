@@ -13,7 +13,6 @@ class MapFilter(object):
         pass
 
     def preprocess(self, data, columns):
-
         '''
         Löscht alle Spalten bis auf columns
         in data
@@ -43,7 +42,7 @@ class MapFilter(object):
         # Maß
         measure = lambda x, y: sum([int(x[i] == y[j])
                                     for i in range(len(x))
-                                    for j in range(len(y))]) / len(x) if len(x) < len(y) \
+                                    for j in range(len(y))]) / len(x) if len(x) > len(y) \
             else sum([int(x[i] == y[j])
                       for i in range(len(x))
                       for j in range(len(y))]) / len(y)
@@ -54,7 +53,6 @@ class MapFilter(object):
         return result
 
     def remove_duplicates(self, List):
-
         '''
         Duplikate in Liste entfernen
         '''
@@ -68,7 +66,6 @@ class MapFilter(object):
         return unique_list
 
     def parse_infos_singleton(self, data, columns):
-
         '''
         Holt sich Zeilen von columns und die
         darin enthaltenen Infos in brauchbarem
@@ -105,11 +102,8 @@ class MapFilter(object):
         return infos
 
     def parse_infos_tuple(self, base):
-
         '''
-        Holt sich Zeilen von columns und die
-        darin enthaltenen Infos in brauchbarem
-        Format
+        Holt sich Infos in brauchbarem Format
         '''
 
         # Anzahl an Merkmalen
@@ -136,7 +130,6 @@ class MapFilter(object):
         return infos
 
     def parse_infos_triple(self, base):
-
         '''
         Holt sich Zeilen von columns und die
         darin enthaltenen Infos in brauchbarem

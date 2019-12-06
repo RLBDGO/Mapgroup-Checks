@@ -62,7 +62,6 @@ class BankBasis(MapFilter):
                       self.triple_opt + self.tuple_inc + self.triple_inc
 
     def compare_singleton_instances(self, infos):
-
         '''
         Vergleicht jene Instanzen miteinander
         die lediglich ein Merkmal aufweisen
@@ -113,10 +112,9 @@ class BankBasis(MapFilter):
             df[c] = df[c].astype('int64')
 
         # Kohärenzmaß anwenden
-        coherence_measures = [
-            (to_compare_1, to_compare_2, self.measure_coherence(df[to_compare_1], df[to_compare_2]))
-            for to_compare_1 in df.columns for to_compare_2 in df.columns
-            if to_compare_1 != to_compare_2]
+        coherence_measures = [(to_compare_1, to_compare_2, self.measure_coherence(df[to_compare_1], df[to_compare_2]))
+                              for to_compare_1 in df.columns for to_compare_2 in df.columns
+                              if to_compare_1 != to_compare_2]
 
         # herausparsen von Dopplungen
         # unter coherence_measures
@@ -195,7 +193,6 @@ class BankBasis(MapFilter):
         return output_messages
 
     def opt_candidates(self, data, n):
-
         '''
         Findet Mapgruppen, die
         eine potenzielle Verbesserungsoption
@@ -234,7 +231,6 @@ class BankBasis(MapFilter):
         return output_messages
 
     def inc_candidates(self, data):
-
         '''
         Findet Duplikate
         '''

@@ -245,3 +245,7 @@
 1146;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;9010000;0;NULL;Bedingungen;2561;BGD97;geschaeft;SPOTKontoOhneKundenbezugstamm;KontoartCode;=;791
 1269;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;9200000;0;NULL;Bedingungen;3047;BGD202;geschaeft;SPOTKontoOhneKundenbezugstamm;SachkontoNr;=;2201
 1269;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;9200000;0;NULL;Bedingungen;3046;BGD202;geschaeft;SPOTKontoOhneKundenbezugstamm;KontoartCode;=;750
+1269;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;9200000;0;NULL;Bedingungen;3047;BGD300;geschaeft;SPOTKontoOhneKundenbezugstamm;SachkontoNr;=;2201
+1269;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;9200000;0;NULL;Bedingungen;3046;BGD300;geschaeft;SPOTKontoOhneKundenbezugstamm;KontoartCode;=;750
+1062;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;5600000;0;NULL;Bedingungen;2372;BGD301;geschaeft;SPOTKontoOhneKundenbezugstamm;SachkontoNr;in;(9428, 9432, 9434)
+1062;('BABA');geschaeft;SPOTBestandskontoWerteOhneKundenbezug;SPOTBilanzGliederungDetail;5600000;0;NULL;Bedingungen;2371;BGD301;geschaeft;SPOTKontoOhneKundenbezugstamm;KontoartCode;=;791
