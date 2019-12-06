@@ -195,6 +195,8 @@ class BilanzGliederung(MapFilter):
 
         # Kohärenzmaß anwenden
         # -> [ (Mapgruppe 1, Mapgruppe 2, Wert,
+        #       BalanceAmountEUR@> 1,
+        #       BalanceAmountEUR@> 2,
         #       Bilanzgliederungsschlüssel 1,
         #       Bilanzgliederungsschlüssel 2) ]
         coherence_measures = []
