@@ -27,8 +27,6 @@ def main():
                             info_5=int(INFO_5)-1)
 
     print(output(test.result))
-    for i in test.compare_tup_tri():
-        print(i)
 
     log_file(test.result, r'{}'.format(OUT))
 
