@@ -24,7 +24,7 @@ def log_file(messages, directory):
     try:
         if not os.path.exists(directory):
             os.makedirs(directory)
-        with open(directory + '/'+file_name, 'w') as f:
+        with open(directory + '/'+file_name+'.txt', 'w') as f:
             f.write(text)
 
     except Exception:

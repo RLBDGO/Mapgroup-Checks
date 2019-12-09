@@ -43,7 +43,7 @@ class BilanzGliederung(MapFilter):
                                       columns=self.columns)
 
         # Resultat
-        self.result = self.compare_tuples() + self.compare_triples()
+        self.result = self.compare_tuples() + self.compare_triples() + self.compare_tup_tri()
 
     def parse_infos(self, data, columns):
         '''
@@ -220,14 +220,18 @@ class BilanzGliederung(MapFilter):
         inc = []
         intg = []
         dup = []
+        war = []
 
         for m in coherence_measures:
             if 0 < m[2] < 1 and m[3] == m[4] and m[5] != m[6]:
                 intg += [[m[0], m[1], m[2]]]
             elif m[2] == 1 and m[3] == m[4] and m[5] == m[6]:
                 dup += [[m[0], m[1], m[2]]]
-            elif m[2] > 0 and m[3] != m[4] and m[5] != m[6]:
+            elif m[2] > 0 and m[3] == m[4] and m[5] != m[6]:
                 inc += [[m[0], m[1], m[2]]]
+            elif m[2] > 0 and m[3] != m[4] and m[5] == m[6]:
+                war += [[m[0], m[1], m[2]]]
+
 
         # Output konfigurieren
         output_messages = []
@@ -238,6 +242,78 @@ class BilanzGliederung(MapFilter):
             output_messages += [f'  DUPLIKAT            |   {i[0]} und {i[1]} sind Duplikate                 ']
         for i in inc:
             output_messages += [f'  INKONSISTENZ        |   Inkonsistenz zwischen {i[0]} und {i[1]}          ']
+        for i in war:
+            output_messages += [f'  WARNUNG             |   Beachte {i[0]} und {i[1]}                        ']
 
         return output_messages
 
+    def compare_tup_tri(self):
+        '''
+        Auf Basis der herausgeparsten Infos
+        werden zweistellige Mapgruppen mit
+        dreistelligen Mapgruppen verglichen
+        '''
+
+        # Infos zurechtparsen
+        # [ [Mapgruppe, [Tupel], Stelligkeit] ]
+        infos = [[info[0], info[1], len(info)-1] for info in self.infos]
+
+        # Kohärenzmaß anwenden
+        # -> [ (Mapgruppe 1, Mapgruppe 2, Wert,
+        #       Stelligkeit 1, Stelligkeit 2) ]
+        coherence_measures = []
+
+        for i in infos:
+            for j in infos:
+                if i != j:
+                    coherence_measures += [(i[0], j[0],
+                                            self.measure_coherence(i[1], j[1]),
+                                            i[-1], j[-1])]
+
+        # herausparsen von Dopplungen
+        # unter coherence_measures
+        for m1 in coherence_measures:
+            for m2 in coherence_measures:
+                if m1[0] == m2[1] and m1[1] == m2[0]:
+                    coherence_measures.remove(m2)
+
+        # nur diejenigen Vergleiche
+        # wo Maß > 0
+        bigger_0 = []
+        for m in coherence_measures:
+            if m[2] > 0.0:
+                bigger_0 += [m]
+
+        # nur diejenigen Vergleiche
+        # wo Stelligkeit verschieden
+        diff_ar = []
+        for e in bigger_0:
+            if e[-1] != e[-2]:
+                diff_ar += [e]
+
+        # Resultat herausparsen
+        # [ [Mapgruppe 1, ..., Mapgruppe n]
+        result = []
+        for e1 in diff_ar:
+            for e2 in diff_ar:
+                if len(set(e1[0:2]).intersection(set(e2[0:2]))) and e1 != e2:
+                    result += [[e1[0:2], e2[0:2]]]
+
+        # Resultat zurechtparsen
+        for r1 in result:
+            for r2 in result:
+                if r1[0] == r2[1] and r2[0] == r1[1]:
+                    result.remove(r2)
+
+        # Output konfigurieren
+        out = []
+        for r in result:
+            new = self.remove_duplicates([r[0][0], r[0][1], r[1][0], r[1][1]])
+            out += [new]
+
+        output_messages = []
+
+        for i in out:
+            output_messages += [f'  INKONSISTENZ        |   Betrachte {i[:]}  ']
+
+        return output_messages
