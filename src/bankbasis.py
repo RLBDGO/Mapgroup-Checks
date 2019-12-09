@@ -55,7 +55,7 @@ class BankBasis(MapFilter):
 
         # Inkonsistenzen unter
         # dreistelligen Mapgruppen
-        self.triple_inc = self.inc_candidates(data= self.infos_triple)
+        self.triple_inc = self.inc_candidates(data=self.infos_triple)
 
         # Ergebnisse
         self.result = self.singleton_result + self.tuple_opt + \
@@ -214,7 +214,7 @@ class BankBasis(MapFilter):
             for j in data:
                 value = compare(self.remove_duplicates(i[-1][0]),
                                 self.remove_duplicates(j[-1][0]))
-                if value >= 0.5 and value < 1 and (check(i, j) == True) and i != j:
+                if 0.5 <= value < 1 and (check(i, j) == True) and i != j:
                     results += [(i[0], j[0], value)]
 
         for r_1 in results:
