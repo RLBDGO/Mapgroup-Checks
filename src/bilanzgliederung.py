@@ -241,12 +241,3 @@ class BilanzGliederung(MapFilter):
 
         return output_messages
 
-
-
-
-
-
-
-
-
-

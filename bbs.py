@@ -13,7 +13,7 @@ INFO_2 = config['columns']['file.mapgruppe']
 INFO_3 = config['columns']['file.info']
 INFO_4 = config['columns']['file.values']
 
-OUT = config['out']['log.path']
+OUT = config['out']['Ergebnisse.path']
 
 
 def main():

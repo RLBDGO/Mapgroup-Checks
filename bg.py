@@ -14,7 +14,7 @@ INFO_3 = config['columns']['file.m']
 INFO_4 = config['columns']['file.ba']
 INFO_5 = config['columns']['file.V']
 
-OUT = config['out']['log.path']
+OUT = config['out']['Ergebnisse.path']
 
 
 def main():
