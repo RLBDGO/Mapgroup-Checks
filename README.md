@@ -16,7 +16,7 @@ Im Folgenden folgt eine kurze Anleitung zur Ausführung von **Mapgroup Checks**,
 voraussetzt, dass Sie über einen **python interpreter** verfügen, um **Mapgroup Checks**
 nutzen zu können:
 
-0. Installieren Sie **einmalig** alle nötigen Pakete mit: ``python -m install.py``
+0. Installieren Sie **einmalig** alle nötigen Pakete aus package_installer mit: ``python install.py``
 1. Konvertieren Sie die zu prüfende Datei (= excel file) immer zuerst zu einer .csv-Datei
 2. Konfigurieren Sie das jeweilige config file, **wenn nötig**
 3. **Mapgroup Checks** ausführen mit: ``python bbs.py`` oder ``python bg.py``
