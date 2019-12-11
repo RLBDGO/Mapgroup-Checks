@@ -19,4 +19,4 @@ nutzen zu können:
 0. Installieren Sie **einmalig** alle nötigen Pakete mit: ``python -m install.py``
 1. Konvertieren Sie die zu prüfende Datei (= excel file) immer zuerst zu einer .csv-Datei
 2. Konfigurieren Sie das jeweilige config file, **wenn nötig**
-3. **Mapgroup Checks** ausführen mit: ``python -m bbs.py`` oder ``python -m bg.py``
+3. **Mapgroup Checks** ausführen mit: ``python bbs.py`` oder ``python bg.py``
